@@ -1,0 +1,4 @@
+//! Mappings for LingMetaX, <https://github.com/rgriscom/LingMetaX>.
+//! Template for `sessions.csv`: <https://github.com/rgriscom/LingMetaX/blob/main/Templates/Sessions.csv>.
+
+const SESSIONS: &'static str = "date;title;filename;description;location_region;location_continent;location_country;location_local;archive_repository;genre;subgenre;topic;keywords;involvement;planning;social_context;subject_languages;working_languages;access_AILCA;access_AILLA;access_ANLA;access_ELAR;access_PARADISEC;access_TLA;access_REAP;access_custom;access_explanation;video;microphone;audio;other_equipment;recording_conditions;participant_1_full_name;participant_1_role;participant_2_full_name;participant_2_role;participant_3_full_name;participant_3_role;participant_4_full_name;participant_4_role;participant_5_full_name;participant_5_role";
