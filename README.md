@@ -14,7 +14,7 @@ Usage (not yet on crates.io):
 `Cargo.toml`:
 ```toml
 [dependencies]
-cmdi-lat = {git = "https://github.com/jenslar/cmdi-lat.git"}
+cmdi-lat = {git = "https://github.com/jenslar/cmdi_lat.git"}
 ```
 
 `src/main.rs`:
