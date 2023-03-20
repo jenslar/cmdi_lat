@@ -219,7 +219,7 @@ impl Cmd {
     pub fn children<'a>(&'a self) -> impl Iterator<Item = Cmd> + 'a {
         self.resources()
             .filter_map(|res| if res.is_metadata() {
-                res.local_uri_path(self.path.parent())
+                res.local_uri_as_path(self.path.parent())
                     .and_then(|p| Cmd::deserialize(&p).ok())
             } else {
                 None
@@ -232,7 +232,7 @@ impl Cmd {
     pub fn paths_metadata(&self) -> Vec<PathBuf> {
         self.resources()
             .filter_map(|res| if res.is_metadata() {
-                res.local_uri_path(self.path.parent())
+                res.local_uri_as_path(self.path.parent())
             } else {
                 None
             })
@@ -244,7 +244,7 @@ impl Cmd {
     pub fn paths_resource(&self) -> Vec<PathBuf> {
         self.resources()
             .filter_map(|res| if res.is_resource() {
-                res.local_uri_path(self.path.parent())
+                res.local_uri_as_path(self.path.parent())
             } else {
                 None
             })
@@ -322,8 +322,10 @@ impl Cmd {
         self.resources.resource_proxy_list.resource_proxies.iter()
     }
 
-    pub fn add_resource(&mut self) {
-
+    /// Add resource proxy. Can be either a data file (`Resource`),
+    /// or more CMDI metadata (`Metadata`).
+    pub fn add_resource_proxy(&mut self, path: &Path) {
+        let mut resource = CmdResourceProxy::default();
     }
 
     /// Remove all `Keys` fields present.
